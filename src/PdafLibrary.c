@@ -1,4 +1,4 @@
-﻿/*
+/*
 Copyright (c)  2016, Sony Corporation All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, 
@@ -98,7 +98,7 @@ extern signed long PdLibGetDefocus
     /* Check XKnotNumDefocusOKNG and YKnotNumDefocusOKNG */ 
     if ((pfa_PdLibInputData->XKnotNumDefocusOKNG != 0) && (pfa_PdLibInputData->YKnotNumDefocusOKNG != 0)) {
         /* Check the value of input */
-        if ( (*pfa_PdLibInputData).PhaseDifference != ( D_PD_ERROR_VALUE << 4 ) ) {
+        if ( (*pfa_PdLibInputData).PhaseDifference != ( (signed long)D_PD_ERROR_VALUE * 16L ) ) {
             /* Calculate defocus confidence level */
             job_calc_defocus_confidence_level(pfa_PdLibInputData, &(PdLibOutputData.DefocusConfidenceLevel));
             /* Calculate defocus confidence */
